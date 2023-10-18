@@ -38,7 +38,6 @@ alias update_auth='VENV=`basename $VIRTUAL_ENV` && workon falkor && python $FALK
 alias ds_cli="workon falkor; python $FALKOR/scripts/data_infra/ds_cli.py"
 
 
-export AWS_ACCESS_KEY_ID=AKIAZ7XXTQPETFVJH5X5
-export AWS_SECRET_ACCESS_KEY=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
-export AWS_DEFAULT_REGION=us-west-2
+export AWS_PROFILE="dev"
+eval "$(aws configure export-credentials --profile $AWS_PROFILE --format env)"
 export DATABRICKS_CONFIG_FILE=~/.databrickscfg
