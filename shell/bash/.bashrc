@@ -34,7 +34,9 @@ alias caputil="$WORKON_FALKOR; $FALKOR/scripts/backend/capture_util2.py -- index
 alias tattoo_create_index="$WORKON_FALKOR; $FALKOR/scripts/backend/capture_util2.py -- --print-vionav --print-fusion"
 alias lookup="$WORKON_FALKOR && ${CODE}/falkor/scripts/tattoo/lookup.py"
 alias toopy="python $FALKOR/scripts/gui/toopy.py"
-alias update_auth='VENV=`basename $VIRTUAL_ENV` && workon falkor && python $FALKOR/scripts/backend/acquire_auth_token.py && workon $VENV'
+alias update_auth='if [ -z ${VIRTUAL_ENV} ]; then COMMAND='deactivate';else V_ENV=`basename $VIRTUAL_ENV`; COMMAND="workon $V_ENV"; fi && workon falkor && python $FALKOR/scripts/backend/acquire_auth_token.py && $COMMAND'
+alias update_auth_dev='if [ -z ${VIRTUAL_ENV} ]; then COMMAND='deactivate';else V_ENV=`basename $VIRTUAL_ENV`; COMMAND="workon $V_ENV"; fi && workon falkor && python $FALKOR/scripts/backend/acquire_auth_token.py --dev && $COMMAND'
+
 alias ds_cli="workon falkor; python $FALKOR/scripts/data_infra/ds_cli.py"
 
 
