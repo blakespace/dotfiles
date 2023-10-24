@@ -20,6 +20,7 @@ NC='\e[0m'
 # https://www.gnu.org/software/bash/manual/html_node/Controlling-the-Prompt.html
 unset PROMPT_COMMAND
 export PS1="🦈  \W \$ "
+alias emacs='emacs -nw'
 
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
