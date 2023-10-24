@@ -42,7 +42,7 @@ alias ds_cli="workon falkor; python $FALKOR/scripts/data_infra/ds_cli.py"
 #export DISPLAY=:1
 #if [ $(ps -ef | grep `whoami` | grep 'Xtightvnc :1' | wc -l) -lt 2 ]; then vncserver ;fi;
 
-
+export agisoft_LICENSE=/home/blake/metashape-pro/ppu-license/openspace-primary.lic
 export AWS_PROFILE="dev"
 eval "$(aws configure export-credentials --profile $AWS_PROFILE --format env)"
 export DATABRICKS_CONFIG_FILE=~/.databrickscfg
