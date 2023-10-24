@@ -31,6 +31,7 @@ export WORKON_FALKOR="workon falkor"
 alias cdfalkor="cd $FALKOR"
 alias wf=$WORKON_FALKOR
 alias caputil="$WORKON_FALKOR; $FALKOR/scripts/backend/capture_util2.py -- index.json"                               
+alias caputildev="$WORKON_FALKOR; $FALKOR/scripts/backend/capture_util2.py -- index.json --dev --base-dir ~/data/tattoo-dev"                               
 alias tattoo_create_index="$WORKON_FALKOR; $FALKOR/scripts/backend/capture_util2.py -- --print-vionav --print-fusion"
 alias lookup="$WORKON_FALKOR && ${CODE}/falkor/scripts/tattoo/lookup.py"
 alias toopy="python $FALKOR/scripts/gui/toopy.py"
