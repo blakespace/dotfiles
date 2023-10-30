@@ -48,5 +48,6 @@ alias ds_cli="workon falkor; python $FALKOR/scripts/data_infra/ds_cli.py"
 
 export agisoft_LICENSE=/home/blake/metashape-pro/ppu-license/openspace-primary.lic
 export AWS_PROFILE="dev"
+alias install_vnc='sudo apt install tigervnc-standalone-server -y'
 eval "$(aws configure export-credentials --profile $AWS_PROFILE --format env)"
 export DATABRICKS_CONFIG_FILE=~/.databrickscfg
