@@ -4,8 +4,7 @@ export HISTSIZE=10000
 export HISTFILESIZE=100000
 export HISTTIMEFORMAT="%F %T "
 export HISTCONTROL=ignoredups:erasedups
-export PROMPT_COMMAND='history -a'
-
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 # append to the history file instead of overwriting it when shell closed
 shopt -s histappend
 
