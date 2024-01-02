@@ -1,13 +1,11 @@
-
 export HISTFILE="$HOME/.bash_history"
 export HISTSIZE=10000
 export HISTFILESIZE=100000
 export HISTTIMEFORMAT="%F %T "
 export HISTCONTROL=ignoredups:erasedups
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 # append to the history file instead of overwriting it when shell closed
 shopt -s histappend
-
+export PROMPT_COMMAND="history -a; history -c; history -r;"
 
 # colors
 red='\e[0;31m'
@@ -20,7 +18,6 @@ NC='\e[0m'
 
 # https://ss64.com/bash/syntax-prompt.html
 # https://www.gnu.org/software/bash/manual/html_node/Controlling-the-Prompt.html
-unset PROMPT_COMMAND
 export PS1="🦈  \W \$ "
 alias emacs='emacs -nw'
 
