@@ -51,8 +51,10 @@ alias ds_cli="workon falkor; python $FALKOR/scripts/data_infra/ds_cli.py"
 export agisoft_LICENSE=/home/blake/metashape-pro/ppu-license/openspace-primary.lic
 export AWS_PROFILE="dev"
 export AWS_DEFAULT_REGION='us-west-2'
-alias install_vnc='sudo apt install tigervnc-standalone-server -y'
+alias install_vnc='sudo apt install tigervnc-standalone-server -y; vncserver'
 
 alias kub-dev-396="kubectx arn:aws:eks:us-west-2:686640301001:cluster/openspace-dev-ephemeral; kubens ai-396"
+
+alias start-label-studio='workon label-studio; ;export LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/home/blake;  export LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true;label-studio'
 eval "$(aws configure export-credentials --profile $AWS_PROFILE --format env)"
 export DATABRICKS_CONFIG_FILE=~/.databrickscfg
