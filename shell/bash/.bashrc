@@ -58,4 +58,5 @@ alias kub-dev-396="kubectx arn:aws:eks:us-west-2:686640301001:cluster/openspace-
 alias start-label-studio='workon label-studio; export LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/home/blake;  export LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true;label-studio'
 eval "$(aws configure export-credentials --profile $AWS_PROFILE --format env)"
 export DATABRICKS_CONFIG_FILE=~/.databrickscfg
+export DISPLAY=:1
 alias start-display='Xvfb :1 -screen 0 1280x1024x24 &'
