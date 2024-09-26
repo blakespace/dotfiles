@@ -42,8 +42,8 @@ alias lookup="$WORKON_FALKOR && ${CODE}/falkor/scripts/tattoo/lookup.py"
 alias toopy="python $FALKOR/scripts/gui/toopy.py"
 alias update_auth='if [ -z ${VIRTUAL_ENV} ]; then COMMAND='deactivate';else V_ENV=`basename $VIRTUAL_ENV`; COMMAND="workon $V_ENV"; fi && workon falkor && python $FALKOR/scripts/backend/acquire_auth_token.py && $COMMAND'
 alias update_auth_dev='if [ -z ${VIRTUAL_ENV} ]; then COMMAND='deactivate';else V_ENV=`basename $VIRTUAL_ENV`; COMMAND="workon $V_ENV"; fi && workon falkor && python $FALKOR/scripts/backend/acquire_auth_token.py --dev && $COMMAND'
-alias aws_login='aws sso login'
 alias aws_refresh='eval $(aws configure export-credentials --profile $AWS_PROFILE --format env)'
+alias aws_login='aws sso login; aws_refresh;'
 alias ds_cli="workon falkor; python $FALKOR/scripts/data_infra/ds_cli.py"
 #export DISPLAY=:1
 #if [ $(ps -ef | grep `whoami` | grep 'Xtightvnc :1' | wc -l) -lt 2 ]; then vncserver ;fi;
@@ -56,7 +56,7 @@ alias install_vnc='sudo apt install tigervnc-standalone-server -y; vncserver'
 alias kub-dev-396="kubectx arn:aws:eks:us-west-2:686640301001:cluster/openspace-dev-ephemeral; kubens ai-396"
 
 alias start-label-studio='workon label-studio; export LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/home/blake;  export LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true;label-studio'
-eval "$(aws configure export-credentials --profile $AWS_PROFILE --format env)"
+# eval "$(aws configure export-credentials --profile $AWS_PROFILE --format env)"
 export DATABRICKS_CONFIG_FILE=~/.databrickscfg
 export DISPLAY=:1
 alias start-display='Xvfb :1 -screen 0 1280x1024x24 &'
