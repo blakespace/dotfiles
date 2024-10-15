@@ -60,4 +60,4 @@ alias start-label-studio='workon label-studio; export LABEL_STUDIO_LOCAL_FILES_D
 export DATABRICKS_CONFIG_FILE=~/.databrickscfg
 export DISPLAY=:1
 alias start-display='Xvfb :1 -screen 0 1280x1024x24 &'
-echo "export PATH=\"\$PATH:/usr/local/node-v22.7.0-linux-$(if [[ `uname -p` == 'aarch64' ]]; then printf 'arm64'; else printf 'x64'; fi)/bin\""
+export PATH=$PATH:/usr/local/node-v22.7.0-linux-$(if [[ `uname -p` == 'aarch64' ]]; then printf 'arm64'; else printf 'x64'; fi)/bin
