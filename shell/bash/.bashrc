@@ -43,7 +43,7 @@ alias toopy="python $FALKOR/scripts/gui/toopy.py"
 alias update_auth='if [ -z ${VIRTUAL_ENV} ]; then COMMAND='deactivate';else V_ENV=`basename $VIRTUAL_ENV`; COMMAND="workon $V_ENV"; fi && workon falkor && python $FALKOR/scripts/backend/acquire_auth_token.py && $COMMAND'
 alias update_auth_dev='if [ -z ${VIRTUAL_ENV} ]; then COMMAND='deactivate';else V_ENV=`basename $VIRTUAL_ENV`; COMMAND="workon $V_ENV"; fi && workon falkor && python $FALKOR/scripts/backend/acquire_auth_token.py --dev && $COMMAND'
 alias aws_refresh='eval $(aws configure export-credentials --profile $AWS_PROFILE --format env)'
-alias aws_login='aws sso login; aws_refresh;'
+alias aws_login='aws sso login --no-browser --use-device-code; aws_refresh;'
 alias ds_cli="workon falkor; python $FALKOR/scripts/data_infra/ds_cli.py"
 #export DISPLAY=:1
 #if [ $(ps -ef | grep `whoami` | grep 'Xtightvnc :1' | wc -l) -lt 2 ]; then vncserver ;fi;
