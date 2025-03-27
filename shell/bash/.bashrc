@@ -49,7 +49,7 @@ alias ds_cli="workon falkor; python $FALKOR/scripts/data_infra/ds_cli.py"
 #if [ $(ps -ef | grep `whoami` | grep 'Xtightvnc :1' | wc -l) -lt 2 ]; then vncserver ;fi;
 
 export agisoft_LICENSE=/home/blake/metashape-pro/ppu-license/openspace-primary.lic
-export AWS_PROFILE="dev"
+export AWS_PROFILE="default"
 export AWS_DEFAULT_REGION='us-west-2'
 alias install_vnc='sudo apt install tigervnc-standalone-server -y; vncserver'
 
